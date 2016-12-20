@@ -45,3 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Node js
+node_modules/
+
+# Sublime text
+*.sublime-workspace
+*.sublime-project

@@ -1,0 +1,24 @@
+{
+  "name": "gpm",
+  "version": "0.1.0",
+  "description": "Multimedia content for GPS traces",
+  "main": "",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Olivier Gasc <gasc.olivier@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:oliv/gpm.git"
+  },
+  "keywords": [
+    "gpm",
+    "gps",
+    "geolocation",
+    "multimedia"
+  ],
+  "devDependencies": {
+    "jasmine": "^2.5.2"
+  }
+}
