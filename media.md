@@ -41,9 +41,9 @@ The point represents a point id defined in [trace](./trace.md) file.
 
 ## Content
 
-If the media type is `text` or `undefined` (default to `text`), the content should be a `string`, and no further controls should be done.
-If the media type is `trace`, only a local `Package path` can be used.
-For any other type, the content types below can be used.
+- If the media type is `text` or `undefined` (default to `text`), the content should be a `string`, and no further controls should be done.
+- If the media type is `trace`, only a local `Package path` can be used.
+- For any other type, the content types below can be used.
 
 ### Uri
 `(string)` Uri of the distant content from [rfc 3986](https://tools.ietf.org/html/rfc3986).
