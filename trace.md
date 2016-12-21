@@ -17,7 +17,7 @@ Points key should contain an array of points which don't behave to the trace, bu
     {
         "id": 0,
         "coords": [
-            "longitude", "latitude"
+            "latitude", "longitude"
         ],
         "date": <date>,
         "props": {
