@@ -20,10 +20,10 @@ Type `jasmine` or `npm test` in the project directory to run the tests. They are
 
 Usage
 
-    node ./tools/packer.js ./examples/trace trace.gpm
+    node ./tools/packer.js ./examples/trace ./examples/trace.gpm
 
 ### Extracter
 
 Usage
 
-    node ./tools/extractor.js ./examples/trace.gpm ./examples/trace2
+    node ./tools/extractor.js ./examples/trace.gpm ./examples
