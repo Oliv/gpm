@@ -1,5 +1,5 @@
 describe("Medias", function() {
-  var json = require('../examples/media.json');
+  var json = require('../examples/trace/media.json');
 
   it("should contain a media object", function() {
     expect(json).not.toBe(null);
@@ -15,7 +15,7 @@ describe("Medias", function() {
 });
 
 describe("Media", function() {
-  var json = require('../examples/media.json');
+  var json = require('../examples/trace/media.json');
   var medias = json.medias;
 
   var customMatchers = {

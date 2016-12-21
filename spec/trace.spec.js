@@ -1,5 +1,5 @@
 describe("Trace", function() {
-  var json = require('../examples/trace.json');
+  var json = require('../examples/trace/trace.json');
 
   it("should contain a trace object", function() {
     expect(json).not.toBe(null);
@@ -15,7 +15,7 @@ describe("Trace", function() {
 });
 
 describe("Point", function() {
-  var json = require('../examples/trace.json');
+  var json = require('../examples/trace/trace.json');
   var trace = json.trace;
   var points = json.points;
 
