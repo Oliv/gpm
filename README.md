@@ -38,8 +38,8 @@ Usage
       .on('entry', function(e) {
         console.log('entry', e.props);
       })
-      .on('end', function(e) {
-        console.log('done reading package', e.props);
+      .on('end', function() {
+        console.log('done reading package');
       })
       .on('error', function(e) {
         console.error('error while reading package', e);
