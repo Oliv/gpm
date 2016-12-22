@@ -14,22 +14,21 @@ function onEnd() {
 }
 
 function packer(source, target) {
-    var dirDest = fs.createWriteStream(source);
+  var dirDest = fs.createWriteStream(source);
 
-    var pack = tar.Pack({ noProprietary: true })
-      .on('error', onError)
-      .on('end', onEnd)
-    ;
+  var pack = tar.Pack({ noProprietary: true })
+    .on('error', onError)
+    .on('end', onEnd)
+  ;
 
-    return fstream.Reader({ path: target, type: 'Directory' })
-      .on('error', onError)
-      .pipe(pack)
-      .pipe(dirDest)
-    ;
+  return fstream.Reader({ path: target, type: 'Directory' })
+    .on('error', onError)
+    .pipe(pack)
+    .pipe(dirDest)
+  ;
 }
 
 module.exports = packer;
 
-if (target && source) {
-    packer(source, target);
-}
+if (target && source)
+  packer(source, target);

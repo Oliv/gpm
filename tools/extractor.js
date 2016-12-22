@@ -13,18 +13,18 @@ function onEnd() {
 }
 
 function extractor(source, target) {
-    var extract = tar.Extract({ path: target })
-      .on('error', onError)
-      .on('end', onEnd)
-    ;
-    return fs.createReadStream(source)
-      .on('error', onError)
-      .pipe(extract)
-    ;
+  var extract = tar.Extract({ path: target })
+    .on('error', onError)
+    .on('end', onEnd)
+  ;
+
+  return fs.createReadStream(source)
+    .on('error', onError)
+    .pipe(extract)
+  ;
 }
 
 module.exports = extractor;
 
-if (target && source) {
-    extractor(source, target);
-}
+if (target && source)
+  extractor(source, target);
