@@ -10,11 +10,16 @@
 ## Media
 
     {
+        "id": <id>,
         "point": <pointId>,
         "content": <content>,
         "props": <properties>,
         "type": <type>
     }
+
+
+## Id
+`(int)` id of the point, with 11 digits.
 
 
 ## Point

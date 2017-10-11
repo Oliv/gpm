@@ -10,10 +10,15 @@
 ## Trigger
 
     {
+        "id": <id>,
         "point": <pointId>,
         "event": <event>,
         "props": <properties>
     }
+
+
+## Id
+`(int)` id of the point, with 11 digits.
 
 
 ## Point
@@ -28,4 +33,4 @@ The point represents a point id defined in [trace](./trace.md) file.
 
 ## Properties
 
-`(object)` a set of properties transmited to the event triggered.
+`(object)` a set of properties transmitted to the event triggered.
