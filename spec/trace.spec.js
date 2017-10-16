@@ -17,7 +17,6 @@ describe("Trace", function() {
 describe("Point", function() {
   var json = require('../examples/trace/trace.json');
   var trace = json.trace;
-  var points = json.points;
 
   var customMatchers = {
     toBeId: function(util, customEqualityTesters) {
@@ -94,10 +93,4 @@ describe("Point", function() {
   trace.forEach(function(point) {
     testPoint(point);
   });
-
-  if (points !== undefined) {
-    points.forEach(function(point) {
-      testPoint(point);
-    });
-  }
 });

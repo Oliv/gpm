@@ -3,14 +3,10 @@
     {
         "trace": [
             <point>
-        ],
-        "points": [
-            <point>
         ]
     }
 
-Trace key should contain an array of points which define the trace segments.
-Points key should contain an array of points which don't behave to the trace, but have some interest for it. For exemple summits around, point of views, facilities, shelters.
+Trace should contain an array of points which define the trace segments.
 
 ## Point
 

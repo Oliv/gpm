@@ -1,12 +1,13 @@
 # Package
 
-A `GPM` package in a directory regrouping [trace](./trace.md), [trigger](./trigger.md) and [media](./media.md) files in one directory.
+A `GPM` package in a directory regrouping [trace](./trace.md), [points](./points.md), [trigger](./trigger.md) and [media](./media.md) files in one directory.
 
 
 ## Package structure
 
     Directory root
         trace.json
+        points.json
         media.json
         trigger.json
         medias
