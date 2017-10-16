@@ -1,4 +1,4 @@
-# Trace
+# Point
 
     {
         "points": [
