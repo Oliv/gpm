@@ -2,18 +2,15 @@ var tar = require('tar');
 var fstream = require('fstream');
 var fs = require('fs');
 
-var target = process.argv[2];
-var source = process.argv[3];
-
 function onError(err) {
   console.error('An error occurred:', err);
 }
 
 function onEnd() {
-  console.log(source, 'Packed to', target);
+  console.log('Packed');
 }
 
-function packer(source, target) {
+function packer(target, source) {
   var dirDest = fs.createWriteStream(source);
 
   var pack = tar.Pack({ noProprietary: true })
@@ -30,5 +27,6 @@ function packer(source, target) {
 
 module.exports = packer;
 
-if (target && source)
-  packer(source, target);
+if (require.main === module) {
+  packer(process.argv[2], process.argv[3]);
+}
