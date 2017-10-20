@@ -10,15 +10,15 @@ function onEnd() {
   console.log('Packed');
 }
 
-function packer(target, source) {
-  var dirDest = fs.createWriteStream(source);
+function packer(source, target) {
+  var dirDest = fs.createWriteStream(target);
 
   var pack = tar.Pack({ noProprietary: true })
     .on('error', onError)
     .on('end', onEnd)
   ;
 
-  return fstream.Reader({ path: target, type: 'Directory' })
+  return fstream.Reader({ path: source, type: 'Directory' })
     .on('error', onError)
     .pipe(pack)
     .pipe(dirDest)

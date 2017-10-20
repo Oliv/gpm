@@ -6,10 +6,10 @@ function onError(err) {
 }
 
 function onEnd() {
-  console.log(source, 'Extracted to', target);
+  console.log('Extracted');
 }
 
-function extractor(target, source) {
+function extractor(source, target) {
   var extract = tar.Extract({ path: target })
     .on('error', onError)
     .on('end', onEnd)

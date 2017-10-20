@@ -18,19 +18,36 @@ Type `jasmine` or `npm test` in the project directory to run the tests. They are
 
 ### Packer
 
-Usage
+Command line :
 
     node ./tools/packer.js ./examples/trace ./examples/trace.gpm
 
-### Extracter
+Code :
 
-Usage
+    const packer = require('gpm/tools/packer');
+
+    packer(directory, file).on('end', () => {
+      console.log('Package packed');
+    });
+
+
+### Extractor
+
+Command line :
 
     node ./tools/extractor.js ./examples/trace.gpm ./examples
 
+Code :
+
+    const extractor = require('gpm/tools/extractor');
+
+    extractor(file, directory).on('end', () => {
+      console.log('Package extracted');
+    });
+
 ### Reader
 
-Usage
+Usage :
 
     var reader = require('gpm/tools/reader');
 
