@@ -26,10 +26,16 @@ Code :
 
     const packer = require('gpm/tools/packer');
 
-    packer(directory, file).on('end', () => {
-      console.log('Package packed');
-    });
+    packer(directory, file)
+      .then(() => {
+        console.log('Package packed');
+      })
+      .catch((e) => {
+        console.error(e)
+      })
+    ;
 
+`packer()` returns a Promise
 
 ### Extractor
 
@@ -41,9 +47,17 @@ Code :
 
     const extractor = require('gpm/tools/extractor');
 
-    extractor(file, directory).on('end', () => {
-      console.log('Package extracted');
-    });
+    extractor(file, directory)
+      .then(() => {
+        console.log('Package extracted');
+      })
+      .catch((e) => {
+        console.error(e)
+      })
+    ;
+
+`extractor()` returns a Promise
+
 
 ### Reader
 

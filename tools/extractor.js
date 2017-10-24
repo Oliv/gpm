@@ -1,24 +1,20 @@
-var tar = require('tar');
-var fs = require('fs');
-
-function onError(err) {
-  console.error('An error occurred:', err);
-}
-
-function onEnd() {
-  console.log('Extracted');
-}
+const tar = require('tar');
+const fs = require('fs');
 
 function extractor(source, target) {
-  var extract = tar.Extract({ path: target })
-    .on('error', onError)
-    .on('end', onEnd)
-  ;
+  return new Promise((resolve, reject) => {
+    const writeStream = fs.createWriteStream(target);
 
-  return fs.createReadStream(source)
-    .on('error', onError)
-    .pipe(extract)
-  ;
+    const extract = tar.Extract({ path: target })
+      .on('error', reject)
+      .on('end', resolve)
+    ;
+
+    fs.createReadStream(source)
+      .on('error', reject)
+      .pipe(extract)
+    ;
+  });
 }
 
 module.exports = extractor;

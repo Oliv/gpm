@@ -1,28 +1,22 @@
-var tar = require('tar');
-var fstream = require('fstream');
-var fs = require('fs');
-
-function onError(err) {
-  console.error('An error occurred:', err);
-}
-
-function onEnd() {
-  console.log('Packed');
-}
+const tar = require('tar');
+const fstream = require('fstream');
+const fs = require('fs');
 
 function packer(source, target) {
-  var dirDest = fs.createWriteStream(target);
+  return new Promise((resolve, reject) => {
+    const writeStream = fs.createWriteStream(target);
 
-  var pack = tar.Pack({ noProprietary: true })
-    .on('error', onError)
-    .on('end', onEnd)
-  ;
+    const pack = tar.Pack({ noProprietary: true })
+      .on('error', reject)
+    ;
 
-  return fstream.Reader({ path: source, type: 'Directory' })
-    .on('error', onError)
-    .pipe(pack)
-    .pipe(dirDest)
-  ;
+    fstream.Reader({ path: source, type: 'Directory' })
+      .on('error', reject)
+      .pipe(pack)
+      .pipe(writeStream)
+      .on('close', () => { resolve(); })
+    ;
+  });
 }
 
 module.exports = packer;
