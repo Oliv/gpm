@@ -11,6 +11,7 @@
 
     {
         "id": <id>,
+        "target": <target>,
         "point": <pointId>,
         "content": <content>,
         "props": <properties>,
@@ -20,6 +21,11 @@
 
 ## Id
 `(int)` id of the point, with 11 digits.
+
+
+## Target
+
+The target is defaulted to [trace](./trace.md). It can too target [point](./point.md).
 
 
 ## Point

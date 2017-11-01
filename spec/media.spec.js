@@ -129,9 +129,15 @@ describe("Media", function() {
   });
 
   function testMedia(media) {
-    it('should contain mandatory id and coords', function() {
+    it('should contain mandatory id, point and coords', function() {
+      expect(Object.keys(media)).toContain('id');
       expect(Object.keys(media)).toContain('point');
       expect(Object.keys(media)).toContain('content');
+    });
+
+    it('should have an id', function() {
+      expect(Object.prototype.toString.call(media.id)).toBe('[object Number]');
+      expect(media.point).toBeId();
     });
 
     it('should have a point relative to an id', function() {
@@ -141,8 +147,15 @@ describe("Media", function() {
 
     it('should have a facultative valid type', function() {
       if ('type' in media) {
-        expect(media.type).not.toBe(null);
+        expect(media.type).not.toBeNull();
         expect(media.type).toBeType();
+      }
+    });
+
+    it('should have a facultative target', function() {
+      if ('target' in media) {
+        expect(Object.prototype.toString.call(media.target)).toBe('[object String]');
+        expect(media.target).toMatch(/^trace|point$/);
       }
     });
 

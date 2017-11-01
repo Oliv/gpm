@@ -1,6 +1,7 @@
 {
     "medias": [
         {
+            "id": 0,
             "point": 0,
             "content": "A short content",
             "props": {
@@ -8,22 +9,27 @@
             }
         },
         {
+            "id": 1,
             "point": 1,
             "type": "text",
             "content": "A short content"
         },
         {
+            "id": 2,
             "point": 2,
             "type": "polygon",
             "content": "AQENVg688MSGlEgdOJpjIUC="
         },
         {
+            "id": 3,
             "point": 3,
             "type": "audio",
             "content": "./file.mp3"
         },
         {
-            "point": 4,
+            "id": 4,
+            "target": "point",
+            "point": 0,
             "type": "video",
             "content": "./video.mp4",
             "props": {
@@ -32,27 +38,36 @@
             }
         },
         {
-            "point": 5,
+            "id": 5,
+            "target": "point",
+            "point": 1,
             "type": "trace",
             "content": "/another_trace"
         },
         {
-            "point": 6,
+            "id": 6,
+            "target": "point",
+            "point": 2,
             "type": "url",
             "content": "http://example.com/more"
         },
         {
-            "point": 7,
+            "id": 7,
+            "target": "point",
+            "point": 3,
             "type": "html",
             "content": "http://example.com/index.html"
         },
         {
-            "point": 8,
+            "id": 8,
+            "target": "point",
+            "point": 3,
             "type": "image",
             "content": "./image.jpg"
         },
         {
-            "point": 9,
+            "id": 9,
+            "point": 3,
             "type": "animation",
             "content": "http://example.com/animation.swf"
         }
