@@ -45,4 +45,6 @@ Points should contain an array of points which don't behave to the trace, but ha
     }
 
 Properties contain all other coordinates beside coordinates like altitude, speed and heading.
-They can differ according to the source used. No medias, point description included, shall be stored here.
+They can differ according to the source used, but should closely match the [w3c Geolocation API Specification 2nd Edition](https://www.w3.org/TR/geolocation-API/#coordinates), latitude and longitude excepted.
+
+No medias, point description included, shall be stored here.
