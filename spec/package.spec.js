@@ -11,7 +11,7 @@ describe('Package', function() {
 
     stream = reader('./examples/' + packageName + '.gpm')
       .on('entry', function(e) {
-        entries.push(e.props.path);
+        entries.push(e.path);
       })
       .on('end', function(e) {
         done();

@@ -3,15 +3,14 @@ const fs = require('fs');
 
 function extractor(source, target) {
   return new Promise((resolve, reject) => {
-    const extract = tar.Extract({ path: target })
+    fs.createReadStream(source).pipe(
+      tar.x({
+        strip: 1,
+        C: target ? target : process.cwd()
+      })
       .on('error', reject)
       .on('end', resolve)
-    ;
-
-    fs.createReadStream(source)
-      .on('error', reject)
-      .pipe(extract)
-    ;
+    )
   });
 }
 

@@ -1,22 +1,9 @@
 const tar = require('tar');
-const fstream = require('fstream');
-const fs = require('fs');
 
 function packer(source, target) {
-  return new Promise((resolve, reject) => {
-    const writeStream = fs.createWriteStream(target);
-
-    const pack = tar.Pack({ noProprietary: true })
-      .on('error', reject)
-    ;
-
-    fstream.Reader({ path: source, type: 'Directory' })
-      .on('error', reject)
-      .pipe(pack)
-      .pipe(writeStream)
-      .on('close', () => { resolve(); })
-    ;
-  });
+  return tar.c({
+    file: target
+  }, [ source ]);
 }
 
 module.exports = packer;

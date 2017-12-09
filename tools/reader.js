@@ -1,9 +1,9 @@
-var tar = require('tar');
-var fs = require('fs');
+const tar = require('tar');
+const fs = require('fs');
 
 function reader(source) {
   return fs.createReadStream(source)
-    .pipe(tar.Parse())
+    .pipe(tar.list())
   ;
 }
 

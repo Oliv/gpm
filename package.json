@@ -19,8 +19,10 @@
     "multimedia"
   ],
   "devDependencies": {
-    "fstream": "^1.0.10",
-    "jasmine": "^2.5.2",
-    "tar": "^2.2.1"
+    "jasmine": "^2.5.2"
+  },
+  "dependencies": {
+    "fstream": "^1.0.11",
+    "tar": "^4.1.1"
   }
 }
