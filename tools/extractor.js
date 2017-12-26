@@ -5,7 +5,6 @@ function extractor(source, target) {
   return new Promise((resolve, reject) => {
     fs.createReadStream(source).pipe(
       tar.x({
-        strip: 1,
         C: target ? target : process.cwd()
       })
       .on('error', reject)
